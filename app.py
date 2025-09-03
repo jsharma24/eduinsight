@@ -1,5 +1,8 @@
 from flask import Flask, render_template, request
 import os
+import os
+import sys
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
@@ -362,4 +365,4 @@ if __name__ == '__main__':
         os.makedirs('uploads')
     if not os.path.exists('static/charts'):
         os.makedirs('static/charts')
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=5000, debug=True)
