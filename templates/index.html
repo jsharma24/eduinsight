@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-8 mx-auto">
+        <div class="card shadow">
+            <div class="card-header bg-success text-white">
+                <h4 class="mb-0">Upload Student Marksheet</h4>
+            </div>
+            <div class="card-body">
+                <p class="card-text">Upload an Excel (.xlsx) or CSV file containing student marks to analyze performance.</p>
+                
+                <form action="/upload" method="post" enctype="multipart/form-data">
+                    <div class="mb-3">
+                        <label for="file" class="form-label">Select File</label>
+                        <input class="form-control" type="file" name="file" id="file" accept=".xlsx, .xls, .csv" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Analyze &rarr;</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
